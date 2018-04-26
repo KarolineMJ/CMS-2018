@@ -2,7 +2,7 @@
 let templateBg  = document.querySelector("#bgTemp").content;
 
 
-let game = document.querySelector("#game");
+let game = document.querySelector("#gameList");
 let page = 1;
 let lookingForData = false;
 
@@ -12,9 +12,9 @@ function fetchBoardGames(){
     let urlParams =  new URLSearchParams(window.location.search);
 
     let catid = urlParams.get("category");
-    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&per_page=2&page="+page
+    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page
     if(catid){
-        endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&per_page=2&page="+page +"&categories="+catid
+        endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page +"&categories="+catid
     }
     fetch(endpoint)
     .then(e => e.json())
@@ -28,10 +28,16 @@ function showGames(data){
 }
 
 function showGame(aGame){
-
+    console.log("something")
     let clone = templateBg.cloneNode(true);
-    clone.querySelector("h1").textContent = aGame.title.rendered
+    clone.querySelector("h1").textContent = aGame.title.rendered;
+      clone.querySelector(".rank span").textContent=aGame.acf.ranking;
 
+  if(aGame._embedded["wp:featuredmedia"]){//img is there
+     clone.querySelector("img").setAttribute("src", aGame._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)
+  } else { // no img
+      clone.querySelector("img").remove()
+  }
     game.appendChild(clone);
 
 }
