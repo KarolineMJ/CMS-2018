@@ -30,7 +30,7 @@ function showGames(data){
 function showGame(aGame){
     console.log("something")
     let clone = templateBg.cloneNode(true);
-    clone.querySelector("h1").textContent = aGame.title.rendered;
+    clone.querySelector("h2").textContent = aGame.title.rendered;
       clone.querySelector(".rank span").textContent=aGame.acf.ranking;
 
   if(aGame._embedded["wp:featuredmedia"]){//img is there
@@ -38,13 +38,23 @@ function showGame(aGame){
   } else { // no img
       clone.querySelector("img").remove()
   }
+
+    clone.querySelector('.readmore').href="subpage.html?id=" +aGame.id;
+
     game.appendChild(clone);
 
 }
 
 fetchBoardGames();
 
+setInterval(function(){
 
+  if(bottomVisible() && lookingForData===false){
+    console.log("We've reached rock bottom, fetching articles")
+    page++;
+    fetchBoardGames();
+  }
+}, 1000)
 
 
 
