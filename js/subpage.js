@@ -13,4 +13,6 @@ function showSinglePost(aPost){
   console.log(aPost);
   document.querySelector("#singleGame h1").textContent=aPost.title.rendered;
 
+  document.querySelector(".descript").innerHTML = aPost.content.rendered;
+
 }
