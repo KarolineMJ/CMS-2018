@@ -12,10 +12,11 @@ function fetchBoardGames(){
     let urlParams =  new URLSearchParams(window.location.search);
 
     let catid = urlParams.get("category");
-    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page
-    if(catid){
-        endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page +"&categories="+catid
+    if(!catid){
+        catid=39;
     }
+    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page +"&categories="+catid
+
     fetch(endpoint)
     .then(e => e.json())
     .then(showGames)
@@ -46,6 +47,7 @@ function showGame(aGame){
 }
 
 fetchBoardGames();
+//fetchSubpages()
 
 setInterval(function(){
 
@@ -59,9 +61,11 @@ setInterval(function(){
 
 
 function bottomVisible(){
+
     const scrollY = window.scrollY
     const visible = document.documentElement.clientHeight
     const pageHeight = document.documentElement.scrollHeight
-    const bottomOfPage = visible + scrollY >= pageHeight
+    const bottomOfPage = visible + scrollY >= pageHeight-20
+    console.log(scrollY,visible, pageHeight, bottomOfPage);
     return bottomOfPage || pageHeight < visible
 }
