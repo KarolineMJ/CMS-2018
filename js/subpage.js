@@ -14,5 +14,6 @@ function showSinglePost(aPost){
   document.querySelector("#singleGame h1").textContent=aPost.title.rendered;
 
   document.querySelector(".descript").innerHTML = aPost.content.rendered;
+  document.querySelector("img").setAttribute("src", aPost.featured_media)
 
 }

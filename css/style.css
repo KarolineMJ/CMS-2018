@@ -5,11 +5,89 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+
+#gameList{
+}
+
+.boardgameSite  .rank{
+    margin: 20px 0 10px 0;
+}
+
+.boardgameSite{
+    margin: 10px;
+}
+
+#gameList p{
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: 109.2px;
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  line-height: 1.4;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+
+
+header{
+    background-color: #80C4A7;
+}
+
+.logo{
+    width:120px;
+    margin: 5px 10px;
+}
+
+
+.button {
+    background-color: #80C4A7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.gameInfo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header"
+        "image tekst"
+
+}
+.bgTempTekst{
+    grid-area: tekst;
+}
+
+.gameInfo h2{
+    font-size: 1em;
+    height: 40px;
+    grid-area: header;
+}
+.gameInfo img{
+    width: 80%;
+    grid-area: image;
+
+}
+
 * {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     list-style: none;
     position: relative
 }
@@ -19,11 +97,9 @@ body {
     height: 100%;
 }
 
-body {
-    color: #fff;
-}
 
 .csstransforms .cn-wrapper {
+    margin-bottom: 3px;
     font-size: 1em;
     width: 26em;
     height: 26em;
@@ -159,20 +235,27 @@ items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */
 }
 
 .csstransforms .cn-wrapper li:nth-child(2) {
-    -webkit-transform: rotate(44deg) skew(50deg);
-    -ms-transform: rotate(44deg) skew(50deg);
-    -moz-transform: rotate(44deg) skew(50deg);
-    transform: rotate(44deg) skew(50deg);
+    -webkit-transform: rotate(30deg) skew(50deg);
+    -ms-transform: rotate(30deg) skew(50deg);
+    -moz-transform: rotate(30deg) skew(50deg);
+    transform: rotate(30deg) skew(50deg);
 }
 
 .csstransforms .cn-wrapper li:nth-child(3) {
-    -webkit-transform: rotate(97deg) skew(50deg);
-    -ms-transform: rotate(97deg) skew(50deg);
-    -moz-transform: rotate(97deg) skew(50deg);
-    transform: rotate(97deg) skew(50deg)
+    -webkit-transform: rotate(70deg) skew(50deg);
+    -ms-transform: rotate(70deg) skew(50deg);
+    -moz-transform: rotate(70deg) skew(50deg);
+    transform: rotate(70deg) skew(50deg)
 }
 
 .csstransforms .cn-wrapper li:nth-child(4) {
+    -webkit-transform: rotate(110deg) skew(50deg);
+    -ms-transform: rotate(110deg) skew(50deg);
+    -moz-transform: rotate(110deg) skew(50deg);
+    transform: rotate(110deg) skew(50deg);
+}
+
+.csstransforms .cn-wrapper li:nth-child(5) {
     -webkit-transform: rotate(150deg) skew(50deg);
     -ms-transform: rotate(150deg) skew(50deg);
     -moz-transform: rotate(150deg) skew(50deg);

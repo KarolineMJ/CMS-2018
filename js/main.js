@@ -15,7 +15,7 @@ function fetchBoardGames(){
     if(!catid){
         catid=39;
     }
-    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=2&page="+page +"&categories="+catid
+    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=4&page="+page +"&categories="+catid
 
     fetch(endpoint)
     .then(e => e.json())
@@ -33,6 +33,7 @@ function showGame(aGame){
     let clone = templateBg.cloneNode(true);
     clone.querySelector("h2").textContent = aGame.title.rendered;
       clone.querySelector(".rank span").textContent=aGame.acf.ranking;
+    clone.querySelector(".gameText").innerHTML = aGame.content.rendered;
 
   if(aGame._embedded["wp:featuredmedia"]){//img is there
      clone.querySelector("img").setAttribute("src", aGame._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url)

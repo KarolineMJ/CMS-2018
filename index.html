@@ -12,6 +12,9 @@
 </head>
 
 <body>
+        <header>
+            <img class="logo" src="svg/logo-huset.svg" alt="logo">
+        </header>
 
 		<div class="container">
 
@@ -20,6 +23,7 @@
 				<button class="cn-button" id="cn-button">+</button>
 				<div class="cn-wrapper" id="cn-wrapper">
 				    <ul>
+				      <li><a href="#"><span class="icon-home"></span></a></li>
 				      <li><a href="#"><span class="icon-info-sign"></span></a></li>
 				      <li><a href="#"><span class="icon-headphones"></span></a></li>
 				      <li><a href="#"><span class="icon-map-marker"></span></a></li>
@@ -54,24 +58,26 @@
     </template>
     </section>
 
-
-
+<div class="boardgameSite">
+<h1>Boardgames</h1>
+   <p>We’ve got new games, old games, dice games, card games, party games, strategic games and quite a few games with sheep in them. They all have just two things in common: They’re far from digital…and quite possibly just the thing you’ve been waiting for to take your mind of your humdrum adult life.</p>
     <section id="gameList">
 
+
     <template id="bgTemp">
-       <h1>Boardgames</h1>
         <article class="gameInfo">
            <h2>Games</h2>
-            <div class="gameText"></div>
-        </article>
-        <article class="game">
             <img src="" alt="">
+            <div class="bgTemp">
+            <div class="gameText"></div>
             <div class="rank">Ranking: <span></span></div>
 
-          <p><a class="readmore" href="">Read more</a></p>
+          <p><a class="readmore button" href="">Read more</a></p>
+          </div>
         </article>
     </template>
     </section>
+</div>
 
     <section id="specificGame">
         <template id="bgSpeciTemp">
@@ -93,9 +99,10 @@
     </section>
 
 
-    <script src="js/main.js"></script>
     <script src="js/polyfills.js"></script>
 	<script src="js/demo1.js"></script>
+  <script src="js/main.js"></script>
+
    <!-- <script src="js/menu.js"></script> -->
 </body>
 
