@@ -72,6 +72,8 @@ function bottomVisible(){
 }
 
 
+
+
 let myVar;
 
 function loaderThreeSec(){
