@@ -9,7 +9,9 @@ body{
 }
 
 .boardgameSite{
-    margin: 10px;
+    padding: 10px;
+    padding-top: 75px;
+
 }
 
 #gameList p{
@@ -112,6 +114,9 @@ body{
 
 header{
     background-color: #80C4A7;
+    position: fixed;
+    width: 100vw;
+    z-index: 8;
 }
 
 .logo{
@@ -119,6 +124,9 @@ header{
     margin: 5px 10px;
 }
 
+.loaderChess{
+    width:100%;
+}
 
 .button {
     background-color: #80C4A7;
@@ -169,6 +177,12 @@ header{
     margin: 0;
     list-style: none;
     position: relative
+}
+
+.container-fluid{
+    padding: 10px;
+    padding-top: 75px;
+
 }
 
 /*---------------------------------------------------

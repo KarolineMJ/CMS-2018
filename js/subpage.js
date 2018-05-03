@@ -16,6 +16,6 @@ function showSinglePost(aPost){
   document.querySelector("#singleGame h1").textContent=aPost.title.rendered;
 
   document.querySelector(".descript").innerHTML = aPost.content.rendered;
-  document.querySelector("img").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
+  document.querySelector(".imageGame").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
 
 }
