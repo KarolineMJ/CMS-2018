@@ -15,7 +15,7 @@ function fetchBoardGames(){
     if(!catid){
         catid=39;
     }
-    let endpoint = "http://kmjdesign.dk/m2/CMS/wordpress/wp-json/wp/v2/events/?_embed&author=1&per_page=4&page="+page +"&categories="+catid
+    let endpoint = "http://kmjdesign.dk/m2/wordpress/wp-json/wp/v2/events/?_embed&per_page=4&page="+page +"&categories="+catid
 
     fetch(endpoint)
     .then(e => e.json())
@@ -69,4 +69,15 @@ function bottomVisible(){
     const bottomOfPage = visible + scrollY >= pageHeight-20
     console.log(scrollY,visible, pageHeight, bottomOfPage);
     return bottomOfPage || pageHeight < visible
+}
+
+
+let myVar;
+
+function loaderThreeSec(){
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage(){
+    document.querySelector(".loader").style.display= "none";
 }
