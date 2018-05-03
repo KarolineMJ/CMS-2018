@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
 
 body{
     font-family: 'Montserrat', sans-serif;
@@ -76,20 +75,40 @@ body{
 }
 
 .menuMaps.openedMenu{
-    transform: rotate(90deg) scale(1);
+    animation: opensMaps 0.2s forwards ease;
 }
 
 .menuInfo.openedMenu{
-    transform: rotate(0deg) scale(1);
+    animation: opensInfo 0.2s forwards ease;
+
 }
 
 .menuPhone.openedMenu{
-    transform: rotate(135deg) scale(1);
+    animation: opensPhone 0.2s forwards ease;
 }
 .menuGames.openedMenu{
-    transform: rotate(45deg) scale(1);
+    animation: opensGames 0.2s forwards ease;
+
 }
 
+
+@keyframes opensMaps{
+    100%{transform: rotate(90deg) scale(1);
+    }
+}
+@keyframes opensInfo{
+    100%{transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes opensPhone{
+    100%{transform: rotate(135deg) scale(1);
+    }
+}
+@keyframes opensGames{
+    100%{transform: rotate(45deg) scale(1);
+    }
+}
 
 header{
     background-color: #80C4A7;
